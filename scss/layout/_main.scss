@@ -1,0 +1,15 @@
+body {
+  background-color: #121212;
+  color: #eee;
+}
+
+.content {
+  background-image: url('../img/landscape-gradient.png');
+  background-size: contain;
+  height: 800px;
+  background-repeat: no-repeat;
+  
+  h1 {
+    margin: 0;
+  }
+}

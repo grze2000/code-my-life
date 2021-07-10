@@ -95,4 +95,19 @@ svg {
   height: 500px;
 }
 
+body {
+  background-color: #121212;
+  color: #eee;
+}
+
+.content {
+  background-image: url("../img/landscape-gradient.png");
+  background-size: contain;
+  height: 800px;
+  background-repeat: no-repeat;
+}
+.content h1 {
+  margin: 0;
+}
+
 /*# sourceMappingURL=styles.css.map */
