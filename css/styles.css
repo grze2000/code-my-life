@@ -44,6 +44,19 @@ svg {
   flex-grow: 1;
   border: 2px solid #ffffff88;
   padding: 15px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #BC5645 transparent;
+}
+.terminal__content::-webkit-scrollbar {
+  width: 5px;
+}
+.terminal__content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal__content::-webkit-scrollbar-thumb {
+  background: #BC5645;
+  border-radius: 2.5px;
 }
 .terminal__content--target {
   display: none;

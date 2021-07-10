@@ -105,7 +105,7 @@ headerScroll.to(viewBox, {
   width: 1920,
   height: 1080,
   duration: 3
-});
+}).addLabel('parallax');
 
 ScrollTrigger.create({
   trigger: ".header",
@@ -115,3 +115,10 @@ ScrollTrigger.create({
   end: "bottom -400%",
   animation: headerScroll
 });
+
+const terminal = document.querySelector('.terminal__content');
+const config = { attributes: true, childList: true, subtree: true };
+const observer = new MutationObserver(() => {
+  if(terminal.scrollHeight > terminal.clientHeight) terminal.scrollTop = terminal.scrollHeight;
+});
+observer.observe(terminal, config);

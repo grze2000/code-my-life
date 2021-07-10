@@ -1,3 +1,5 @@
+$scrollbar-thumb-width: 5px;
+
 .terminal {
   box-sizing: border-box;
   position: absolute;
@@ -23,6 +25,22 @@
     flex-grow: 1;
     border: 2px solid #ffffff88;
     padding: 15px;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #BC5645 transparent;
+
+    &::-webkit-scrollbar {
+      width: $scrollbar-thumb-width;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #BC5645;
+      border-radius: $scrollbar-thumb-width/2;
+    }
 
     &--target {
       display: none;
