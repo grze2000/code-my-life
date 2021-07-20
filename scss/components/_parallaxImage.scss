@@ -1,0 +1,28 @@
+.parallax-image {
+  position: relative;
+  padding-top: 400px;
+  min-height: 1300px;
+  box-sizing: border-box;
+
+  &__container {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    width: 35%;
+    min-width: 400px;
+    background-color: #7E728CDD;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-height: 900px;
+    max-width: 95%;
+  }
+}

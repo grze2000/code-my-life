@@ -15,6 +15,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js" integrity="sha512-orz/l0zz+W+3mJKlUrK3jQ4q+5RlMt3QPtwifhy3QBD2q2AEarIN55NQDHBrRN9Rc543hRdYjUmCJhG8Jbz5Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="js/CustomEase.min.js"></script>
   <script src="js/MorphSVGPlugin3.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
   <script defer src="js/scripts.js"></script>
   <title>Code my life - Grzegorz Babiarz</title>
 </head>
@@ -440,7 +441,7 @@ Loading story timeline . . .
 </section>
 <main class="content">
   <section class="container mright">
-    <div class="container__image-box">
+    <div class="container__image-box reveal reveal-left">
       <video autoplay muted loop playsinline>
         <source src="img/projects/gra-platformowa.webm" type="video/webm">
         <source src="img/projects/gra-platformowa (1).mp4" type="video/mp4">
@@ -448,28 +449,28 @@ Loading story timeline . . .
        </video>
     </div>
     <div class="container__text">
-      <h2 class="container__heading">Hello world</h2>
-      <p>Co robi 12-latek niemający pojęcia o internecie jak tylko wreszcie zyskuje do niego dostęp? Raczej nie zaczyna samotnie uczyć się programowania... Ale wyjątki się zdarzają, chyba trafiłem w niewłaściwy zakątek internetu.</p>
-      <p>Po krótkiej przygodzie z plikami wsadowymi i decyzji o nauce programowania jako cel obrałem naukę C++. Poznałem podstawy języka wdrażając się w programowanie, a następnie zacząłem eksperywntować z różnymi bibliotekami graficznymi. Szczególnie miło wspominam SFML.</p>
+      <h2 class="container__heading reveal">Hello world</h2>
+      <p class="reveal">Co robi 12-latek niemający pojęcia o internecie jak tylko wreszcie zyskuje do niego dostęp? Raczej nie zaczyna samotnie uczyć się programowania... Ale wyjątki się zdarzają, chyba trafiłem w niewłaściwy zakątek internetu.</p>
+      <p class="reveal">Po krótkiej przygodzie z plikami wsadowymi i decyzji o nauce programowania jako cel obrałem naukę C++. Poznałem podstawy języka wdrażając się w programowanie, a następnie zacząłem eksperywntować z różnymi bibliotekami graficznymi. Szczególnie miło wspominam SFML.</p>
     </div>
   </section>
   <section class="container mleft">
-    <div class="container__image-box">
+    <div class="container__image-box reveal reveal-left">
       <img src="img/projects/theworld6.png" alt="">
     </div>
     <div class="container__text">
-      <h2 class="conainer__heading">A co to ten WebDev</h2>
-      <p>Goodgame Empire, Plemiona. Fajnie jest pograć w strategie, ale co zrobić jeśli rozgrywka staje się nudna a w głowie rodzi się pomysł na własną grę?</p>
-      <p>W pewnym momencie C++ przestał zaspokajać moją ciekawość i zacząłem się zastanawiać, czym różni się tworzenie stron internetowych i czy nie czułbym się w tym lepiej. Po ogólnym zapoznaniu z tematem oraz HTML-em i CSS-em wyznaczyłem sobie ambitny cel - stworzenie gry przeglądarkowej. Był to najważniejszy projekt w moim rozwoju związanym z webdevem. W jego trakcie poznałem PHP, JavaScript i jQuery oraz znacznie zwiększyłem swoje wcześniejsze umiejętności i wiedzę. W międzyczasie tworzyłem również inne, małe projekty jak np. <a href="#">TicTacToe</a> </p>
+      <h2 class="container__heading reveal">A co to ten WebDev</h2>
+      <p class="reveal">Goodgame Empire, Plemiona. Fajnie jest pograć w strategie, ale co zrobić jeśli rozgrywka staje się nudna a w głowie rodzi się pomysł na własną grę?</p>
+      <p class="reveal">W pewnym momencie C++ przestał zaspokajać moją ciekawość i zacząłem się zastanawiać, czym różni się tworzenie stron internetowych i czy nie czułbym się w tym lepiej. Po ogólnym zapoznaniu z tematem oraz HTML-em i CSS-em wyznaczyłem sobie ambitny cel - stworzenie gry przeglądarkowej. Był to najważniejszy projekt w moim rozwoju związanym z webdevem. W jego trakcie poznałem PHP, JavaScript i jQuery oraz znacznie zwiększyłem swoje wcześniejsze umiejętności i wiedzę. W międzyczasie tworzyłem również inne, małe projekty jak np. <a href="#">TicTacToe</a> </p>
     </div>
   </section>
   <section class="images3">
-    <img src="img/projects/theworld2.png" alt="">
-    <img src="img/projects/theworld4.png" alt="">
-    <img src="img/projects/tictactoe3.png" alt="">
+    <img src="img/projects/theworld2.png" alt="" class="skew">
+    <img src="img/projects/theworld4.png" alt="" class="skew">
+    <img src="img/projects/tictactoe3.png" alt="" class="skew">
   </section>
   <section class="container mleft">
-    <div class="container__image-box">
+    <div class="container__image-box reveal reveal-left">
       <video autoplay muted loop playsinline>
         <source src="img/projects/blender1.webm" type="video/webm">
         <source src="img/projects/blender1.mp4" type="video/mp4">
@@ -477,92 +478,92 @@ Loading story timeline . . .
        </video>
     </div>
     <div class="container__text">
-      <h2 class="conainer__heading">2D to za mało</h2>
-      <p>Od zawsze lubiłem matematykę i byłem w niej dobry. To ciekawa przygoda, w jednej chwili nudzisz się rysując trójkąty i kwadraty, aby w następnej odkyć, że istnieje jeszcze trzeci wymiar i można w nim stworzyć o wiele ciekawsze rzeczy.</p>
-      <p>Przygodę z modelami 3D zacząłem od Google SketchUp, a kontynuowałem w Blenderze ucząc się modelowania, teksturowania i animacji. Nie wykonywałem większych projektów ale wielokrotnie wracałem do modelowania dla przyjemności i planowania swoich projektów.</p>
+      <h2 class="container__heading reveal">2D to za mało</h2>
+      <p class="reveal">Od zawsze lubiłem matematykę i byłem w niej dobry. To ciekawa przygoda, w jednej chwili nudzisz się rysując trójkąty i kwadraty, aby w następnej odkyć, że istnieje jeszcze trzeci wymiar i można w nim stworzyć o wiele ciekawsze rzeczy.</p>
+      <p class="reveal">Przygodę z modelami 3D zacząłem od Google SketchUp, a kontynuowałem w Blenderze ucząc się modelowania, teksturowania i animacji. Nie wykonywałem większych projektów ale wielokrotnie wracałem do modelowania dla przyjemności i planowania swoich projektów.</p>
     </div>
   </section>
   <section class="images4 mleft">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline class="loc">
       <source src="img/projects/blender2.webm" type="video/webm">
       <source src="img/projects/blender2.mp4" type="video/mp4">
       No video support.
      </video>
-    <img src="img/projects/blender3.png" alt="">
-    <img src="img/projects/blender4.png" alt="">
-    <img src="img/projects/blender5.png" alt="">
+    <img src="img/projects/blender3.png" alt="" class="loc">
+    <img src="img/projects/blender4.png" alt="" class="loc">
+    <img src="img/projects/blender5.png" alt="" class="loc">
   </section>
   <section class="container mright">
-    <div class="container__image-box">
+    <div class="container__text--right-aligned">
+      <h2 class="container__heading reveal">Z kwiatka na kwiatek</h2>
+      <p class="reveal">Trafiając na pobliską jabłoń możesz zadowolić się jej owocami lub poszukać czegoś lepszego, jednak im głębiej wejdziesz do sadu tym więcej różnych smakowitych owoców znajdziesz... i zechcesz spróbować ich wszystkich.</p>
+      <p class="reveal">Moje poszukiwania ciekawszych, lepszych dla mnie technologii nie skończyły się na tych użytytch do stworzenia gry przeglądarkowej. Chęć spróbowania doprowadziła mnie do wielu języków,  w niektórych przypadkach kończąc na kursie podstaw (np. C, Ruby) a w innych na realizacji własnych projektów, jednak zazwyczaj była to tylko krótka przygoda. Jednym z takich języków był C#, w którym zazwyczaj wyklikiwałem interfejs i dopisywałem logikę. Napisałem w nim m.in. prosty program do nagrywania ekranu.</p>
+    </div>
+    <div class="container__image-box reveal reveal-right">
       <img src="img/projects/video-recorder.png" alt="">
     </div>
-    <div class="container__text">
-      <h2 class="conainer__heading">Z kwiatka na kwiatek</h2>
-      <p>Trafiając na pobliską jabłoń możesz zadowolić się jej owocami lub poszukać czegoś lepszego, jednak im głębiej wejdziesz do sadu tym więcej różnych smakowitych owoców znajdziesz... i zechcesz spróbować ich wszystkich.</p>
-      <p>Moje poszukiwania ciekawszych, lepszych dla mnie technologii nie skończyły się na tych użytytch do stworzenia gry przeglądarkowej. Chęć spróbowania doprowadziła mnie do wielu języków,  w niektórych przypadkach kończąc na kursie podstaw (np. C, Ruby) a w innych na realizacji własnych projektów, jednak zazwyczaj była to tylko krótka przygoda. Jednym z takich języków był C#, w którym zazwyczaj wyklikiwałem interfejs i dopisywałem logikę. Napisałem w nim m.in. prosty program do nagrywania ekranu.</p>
-    </div>
   </section>
   <section class="container mright">
-    <div class="container__image-box">
+    <div class="container__image-box reveal reveal-left">
       <img src="img/projects/tanks2.png" alt="">
     </div>
     <div class="container__text">
-      <h2 class="conainer__heading"></h2>
-      <p>Podczas eksploracji różnych technologi trafiłem również na Javę. Spróbowałem swoich sił w tworzeniu modów do Minecrafta oraz zapoznałem się z podstawami pisania aplikacji na Androida. Napisałem także prostą grę w aplecie Javy, w czasach gdy nie zostały one jeszcze porzucone.</p>
+      <h2 class="container__heading reveal"></h2>
+      <p class="reveal">Podczas eksploracji różnych technologi trafiłem również na Javę. Spróbowałem swoich sił w tworzeniu modów do Minecrafta oraz zapoznałem się z podstawami pisania aplikacji na Androida. Napisałem także prostą grę w aplecie Javy, w czasach gdy nie zostały one jeszcze porzucone.</p>
     </div>
   </section>
-  <section class="text-right">
+  <section class="mleft text-center">
     <h2>Gdy informatyka nie wystarcza</h2>
     <p>Szczęście, potęga, duma? Czymże jest uczucie, gdy po wielkim wysiłku, przemyśleniach i debugowaniu niecne wyobrażenia stają się rzeczywistością i samodzielnie wykonany projekt zaczyna działać?</p>
     <p>Nadszedł czas, gdy informatyka przestała zaspokajać moją ciekawość i chęć tworzenia rzeczy samodzielnie. Zainteresowałem się wtedy elektroniką i zacząłem eksperymentować z projektami bazującymi na popularnych Arduino oraz Raspberry Pi. Dzięki nim programowanie zaczęło wykraczać poza ekran komputera i pozwalać na sterowanie różnymi elementami elektronicznymi. Dzięki Raspberry Pi miałem również okazję zapoznać się z Linuxem.</p>
   </section>
   <section class="images4 mright">
-    <img src="img/projects/ledClock.jpg" alt="">
-    <img src="img/projects/ledStar.jpg" alt="">
-    <img src="img/projects/arduinoGamepad.jpg" alt="">
-    <img src="img/projects/tictactoe.png" alt="">
+    <img src="img/projects/ledClock.jpg" alt="" class="loc">
+    <img src="img/projects/ledStar.jpg" alt="" class="loc">
+    <img src="img/projects/arduinoGamepad.jpg" alt="" class="loc">
+    <img src="img/projects/led-christmas-tree.jpg" alt="" class="loc">
   </section>
   <section class="text-right">
-    <h2>Edukacja informatyczna</h2>
-    <p>Nauka w gimnazjum pozostawiała sporo wolnego czasu, który wykorzystywałem na naukę programowania oraz bycie aktywnym użytkownikiem i moderatorem w popularnym serwisie zadane.pl. Kończąc ten etap nauczania musiałem jednak skupić się na egzaminach oraz wyborze szkoły średniej. Naturalnym wyborem był kierunek informatyczny. Rozpocząłem naukę w rzeszowskim Technikum Elektronicznym jednocześnie godząc naukę z programowaniem oraz nową pasją - elektroniką. </p>
+    <h2 class="reveal reveal-right">Edukacja informatyczna</h2>
+    <p class="reveal reveal-right">Nauka w gimnazjum pozostawiała sporo wolnego czasu, który wykorzystywałem na naukę programowania oraz bycie aktywnym użytkownikiem i moderatorem w popularnym serwisie zadane.pl. Kończąc ten etap nauczania musiałem jednak skupić się na egzaminach oraz wyborze szkoły średniej. Naturalnym wyborem był kierunek informatyczny. Rozpocząłem naukę w rzeszowskim Technikum Elektronicznym jednocześnie godząc naukę z programowaniem oraz nową pasją - elektroniką. </p>
   </section>
   <section class="container mright">
-    <div class="container__image-box">
+    <div class="container__image-box reveal reveal-left">
       <img src="img/projects/pyCalc.jpg" alt="">
     </div>
     <div class="container__text">
-      <h2 class="conainer__heading">Sieci neuronowe i inne zjawiska</h2>
-      <p>W trakcie nauki w technikum podląłem się nauki kolejnego języka - Pythona. Szybko polubiłem prostotę oraz możliwości tego języka i zacząłem wykorzystywać go do różnych celów. Stał się głównym językiem wykorzystywanym przeze mnie do programowania na Linuxie, w tym projektów bazujących na Raspberry Pi.</p>
-      <p>Zacząłem również interesować się rozpoznawaniem obrazów, z wykorzystaniem biblioteki OpenCV oraz sieciami neuronowymi wykonując przy ich użyciu m.in. program potrafiący grać w Sapera.</p>
+      <h2 class="container__heading reveal">Sieci neuronowe i inne zjawiska</h2>
+      <p class="reveal">W trakcie nauki w technikum podląłem się nauki kolejnego języka - Pythona. Szybko polubiłem prostotę oraz możliwości tego języka i zacząłem wykorzystywać go do różnych celów. Stał się głównym językiem wykorzystywanym przeze mnie do programowania na Linuxie, w tym projektów bazujących na Raspberry Pi.</p>
+      <p class="reveal">Zacząłem również interesować się rozpoznawaniem obrazów, z wykorzystaniem biblioteki OpenCV oraz sieciami neuronowymi wykonując przy ich użyciu m.in. program potrafiący grać w Sapera.</p>
     </div>
   </section>
   <section class="parallax-image">
-    <div class="parallax-image__content">
-      <h2>Kodowanie to nie wszystko</h2>
-      <p>Czasem okazuje się, że pisanie wszystkiego samodzielnie nie jest najlepszym rozwiązaniem i trzeba wrócić do gotowych lecz ograniczających rozwiązań jak CMS-y. Tworząc strony internetowe miałem okazję wykorzystać WordPressa, jak również zaznajomić się z pisaniem do niego motywów.</p>
+    <div class="parallax-image__container">
+      <div class="parallax-image__content">
+        <h2>Kodowanie to nie wszystko</h2>
+        <p>Czasem okazuje się, że pisanie wszystkiego samodzielnie nie jest najlepszym rozwiązaniem i trzeba wrócić do gotowych lecz ograniczających rozwiązań jak CMS-y. Tworząc strony internetowe miałem okazję wykorzystać WordPressa, jak również zaznajomić się z pisaniem do niego motywów.</p>
+      </div>
     </div>
-    <div class="parallax-image__image">
-      <img src="img/projects/robertrajner.png" alt="">
-    </div>
+    <img class="parallax-image__image" src="img/projects/robertrajner.png" alt="">
   </section>
-  <section class="container mright">
-    <div class="container__image-box">
+  <section class="container mright m10">
+    <div class="container__image-box reveal reveal-left">
       <img src="img/projects/rpadr.png" alt="">
     </div>
     <div class="container__text">
-      <h2 class="conainer__heading">Javascript to też backend</h2>
-      <p>O ile w firmach zazwyczaj występuje specjalizacja i podział obowiązków o tyle aby samodzielnie tworzyć własne projekty i portfolio trzeba być wręcz full stack informatykiem na miarę wymagań z rządowych ofert pracy.</p>
-      <p>Dalszy rozwój skłonił mnie do bliższego zapoznania się z back-endem i kolejną technologią serwerową. Jako że miałem już styczność z javascriptem, atrakcyjne wydało się wykorzystanie go do tworzenia serwerów. Eksperymentowałem z Node.js oraz Socket.IO, łącząc je również ze sterowaniem elektroniką wykorzystują je np. do sterowania robotem przez sieć wraz z transmiją obrazu z pokładowej kamerki.</p>
+      <h2 class="container__heading reveal">Javascript to też backend</h2>
+      <p class="reveal">O ile w firmach zazwyczaj występuje specjalizacja i podział obowiązków o tyle aby samodzielnie tworzyć własne projekty i portfolio trzeba być wręcz full stack informatykiem na miarę wymagań z rządowych ofert pracy.</p>
+      <p class="reveal">Dalszy rozwój skłonił mnie do bliższego zapoznania się z back-endem i kolejną technologią serwerową. Jako że miałem już styczność z javascriptem, atrakcyjne wydało się wykorzystanie go do tworzenia serwerów. Eksperymentowałem z Node.js oraz Socket.IO, łącząc je również ze sterowaniem elektroniką wykorzystują je np. do sterowania robotem przez sieć wraz z transmiją obrazu z pokładowej kamerki.</p>
     </div>
   </section>
   <section class="container mleft">
-    <div class="container__image-box">
-      <img src="img/projects/vwallet.jpg" alt="">
+    <div class="container__text--right-aligned">
+      <h2 class="container__heading reveal">Czas zerwać relacje</h2>
+      <p class="reveal">Relacje bywają trudne, czasem ma się ich dość, trzeba je porzucić, odpocząć zajmując się czymś innym.</p>
+      <p class="reveal">Po wieloletnim związku z SQL-em i relacyjnymi bazami danych nadszedł czas zerwania relacji i rozpoczęcia nowego rozdziału - płomiennego romansu z MongoDB. Zadowolony z wygody stosowania nierelacyjnych baz danych zacząłem je stosować w większości swoich projektów.</p>
     </div>
-    <div class="container__text">
-      <h2 class="conainer__heading">Czas zerwać relacje</h2>
-      <p>Relacje bywają trudne, czasem ma się ich dość, trzeba je porzucić, odpocząć zajmując się czymś innym.</p>
-      <p>Po wieloletnim związku z SQL-em i relacyjnymi bazami danych nadszedł czas zerwania relacji i rozpoczęcia nowego rozdziału - płomiennego romansu z MongoDB. Zadowolony z wygody stosowania nierelacyjnych baz danych zacząłem je stosować w większości swoich projektów.</p>
+    <div class="container__image-box reveal reveal-right">
+      <img src="img/projects/vwallet.jpg" alt="">
     </div>
   </section>
   <section class="text-center">
@@ -570,10 +571,11 @@ Loading story timeline . . .
     <p>Nadchodzi czas końca beztroskiej zabawy, nie można robić wszystkiego na raz, a tymbardziej oczekiwać spektakularnych rezultatów we wszystkich tych rzeczach.</p>
     <p>W pewnym momencie uświadomiłem sobie, że nie jestem w stanie dalej zajmować się wszystkimi swoimi zainteresowaniami, muszę obrać kierunek, na którym się skupię i który będę kontynuował na drodze zawodowej. Musiałem także zwrócić większą uwagę na prezentowanie swoich projektów i dokonań. Kontynuowałem więc rozwój w tematyce front-endu tworząc kolejne projekty, ucząc się Vue, Sass-a oraz zapoznając z Angularem, Deno i pisaniem botów na Discorda.</p>
   </div>
+  </section>
   <section class="carousel">
     <div class="carousel__line carousel-right">
       <img src="img/projects/shoppingList.jpg" alt="">
-      <img src="img/projects/ledControl.jpg" alt="">
+      <img src="img/projects/ledControl.png" alt="">
       <img src="img/projects/bazaMotywow.jpg" alt="">
     </div>
     <div class="carousel__line carousel-left">
@@ -582,19 +584,14 @@ Loading story timeline . . .
       <img src="img/projects/timeProgress.jpg" alt="">
     </div>
   </section>
-  <section class="text-right">
-    <h2>Studia informatyczne - nudy</h2>
-    <p>Przydatne w praktyce umiejętności czy zbyt ogólna wiedza i dokument spełniający wymagania nieświadowych realiów pracodawców? Czym są studia informatyczne?</p>
-    <p>Po zdaniu matury stanąłem przed wyborem kierunku studiów. W poszukiwaniu wrażeń i interesującej wiedzy, nie chcąc podejmować studiów dla samego ich ukończenia, moje poszukiwania wybiegły poza kierunek informatyczny. Rozpozcąłem studia na kierunku Bezpieczeństwo wewnętrzne ze specjalizacjami Cyberbezpieczeństwo oraz Kryminalistyka i Kryminologia.</p>
+  <section class="text-left">
+    <h2 class="text-left__heading reveal reveal-left">Studia informatyczne - nudy</h2>
+    <p class="reveal reveal-left">Przydatne w praktyce umiejętności czy zbyt ogólna wiedza i dokument spełniający wymagania nieświadowych realiów pracodawców? Czym są studia informatyczne?</p>
+    <p class="reveal reveal-left">Po zdaniu matury stanąłem przed wyborem kierunku studiów. W poszukiwaniu wrażeń i interesującej wiedzy, nie chcąc podejmować studiów dla samego ich ukończenia, moje poszukiwania wybiegły poza kierunek informatyczny. Rozpozcąłem studia na kierunku Bezpieczeństwo wewnętrzne ze specjalizacjami Cyberbezpieczeństwo oraz Kryminalistyka i Kryminologia.</p>
   </section>
-  <section class="container mright">
-    <div class="container__image-box">
-      <img src="" alt="">
-    </div>
-    <div class="container__text">
-      <h2 class="conainer__heading">Narysuj mi baranka</h2>
-      <p>Stworzenie grafiki na potrzeby własnych projektów od zawsze było dla mnie problemem i znacznym ograniczeniem. Do tej pory wielokrotnie wykorzystywałem rysowanie oraz grafikę rastrową jednak moje umiejętności graficzne zdecydowanie ograniczały ich przydatność. Polubiłem również grafikę 3D lecz ma ona określone zastosowania i wymaga mocnego sprzętu. Finalnie nadszedł jednak czas na spróbowanie grafiki wektorowej. Stworzyło to również okazję do zapoznania z GSAPem i użycia grafik i animacji w projektwach webowych.</p>
-    </div>
+  <section class="text-left">
+    <h2 class="text-left__heading reveal reveal-left">Narysuj mi baranka</h2>
+    <p class="reveal reveal-left">Stworzenie grafiki na potrzeby własnych projektów od zawsze było dla mnie problemem i znacznym ograniczeniem. Do tej pory wielokrotnie wykorzystywałem rysowanie oraz grafikę rastrową jednak moje umiejętności graficzne zdecydowanie ograniczały ich przydatność. Polubiłem również grafikę 3D lecz ma ona określone zastosowania i wymaga mocnego sprzętu. Finalnie nadszedł jednak czas na spróbowanie grafiki wektorowej. Stworzyło to również okazję do zapoznania z GSAPem i użycia grafik i animacji w projektwach webowych.</p>
   </section>
   <section class="text__center">
     I tak oto dotarliśmy to chwili obecnej pomijając wiele przygód, których nie sposób spamiętać czy udokumentować. Dalej znajduje się tylko przyszłość, niespodziewana i nieokreślona, kryjąca w sobie nieskończone możliwości rozwoju i ambicje.

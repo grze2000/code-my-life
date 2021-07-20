@@ -9,6 +9,15 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
+    &--right-aligned {
+      @extend .container__text;
+      text-align: justify;
+
+      .container__heading {
+        text-align: center;
+      }
+    }
   }
 
   &__heading {

@@ -10,12 +10,18 @@ body, html {
   display: flex;
   margin: 150px 0;
 }
-.container__text {
+.container__text, .container__text--right-aligned {
   width: 50%;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.container__text--right-aligned {
+  text-align: justify;
+}
+.container__text--right-aligned .container__heading {
+  text-align: center;
 }
 .container__heading {
   margin: 0;
@@ -40,6 +46,32 @@ body, html {
 }
 .carousel img {
   width: 40%;
+}
+
+.parallax-image {
+  position: relative;
+  padding-top: 400px;
+  min-height: 1300px;
+  box-sizing: border-box;
+}
+.parallax-image__container {
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.parallax-image__content {
+  width: 35%;
+  min-width: 400px;
+  background-color: #7E728CDD;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.parallax-image__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-height: 900px;
+  max-width: 95%;
 }
 
 .header {
@@ -169,11 +201,46 @@ body {
 .images4 {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  padding: 100px 0;
 }
 .images4 img, .images4 video {
   margin: 2px;
   width: calc(50% - 4px);
   min-width: 200px;
+}
+
+.text-right {
+  width: 50%;
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.text-left {
+  width: 50%;
+  margin-right: auto;
+  text-align: justify;
+}
+.text-left__heading {
+  text-align: center;
+}
+
+.m10 {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+a {
+  color: #7E728C;
+  text-decoration: none;
+}
+a:hover {
+  color: #aaa;
 }
 
 .mleft {
@@ -184,28 +251,9 @@ body {
   margin-left: 15%;
 }
 
-.text-right {
-  width: 50%;
-  margin-left: auto;
-}
-
-.parallax-image {
-  position: relative;
-}
-.parallax-image__content {
-  background-color: #7E728CDD;
-  width: 35%;
-  min-width: 350px;
-  position: absolute;
-  padding: 10px 20px;
-  box-sizing: border-box;
-}
-.parallax-image__image {
-  width: 90%;
-  margin: 0 auto;
-}
-.parallax-image__image img {
-  width: 100%;
+footer {
+  text-align: center;
+  padding: 25px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
