@@ -6,6 +6,42 @@ body, html {
   height: 100%;
 }
 
+.container {
+  display: flex;
+  margin: 150px 0;
+}
+.container__text {
+  width: 50%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container__heading {
+  margin: 0;
+  padding: 0;
+}
+.container__image-box {
+  width: 50%;
+}
+.container__image-box video, .container__image-box img {
+  width: 100%;
+}
+.container__image-box video {
+  max-width: 960px;
+}
+
+.carousel {
+  overflow: hidden;
+}
+.carousel__line {
+  display: flex;
+  margin: 5px 0;
+}
+.carousel img {
+  width: 40%;
+}
+
 .header {
   width: 100%;
   height: 100vh;
@@ -111,6 +147,7 @@ svg {
 body {
   background-color: #121212;
   color: #eee;
+  font-family: "Montserrat", sans-serif;
 }
 
 .content {
@@ -118,9 +155,57 @@ body {
   background-size: contain;
   height: 800px;
   background-repeat: no-repeat;
+  padding: 600px 5% 200px 5%;
 }
 .content h1 {
   margin: 0;
+}
+
+.images3 img, .images3 video {
+  width: 33%;
+  min-width: 200px;
+}
+
+.images4 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.images4 img, .images4 video {
+  margin: 2px;
+  width: calc(50% - 4px);
+  min-width: 200px;
+}
+
+.mleft {
+  margin-right: 15%;
+}
+
+.mright {
+  margin-left: 15%;
+}
+
+.text-right {
+  width: 50%;
+  margin-left: auto;
+}
+
+.parallax-image {
+  position: relative;
+}
+.parallax-image__content {
+  background-color: #7E728CDD;
+  width: 35%;
+  min-width: 350px;
+  position: absolute;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.parallax-image__image {
+  width: 90%;
+  margin: 0 auto;
+}
+.parallax-image__image img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

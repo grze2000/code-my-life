@@ -1,6 +1,7 @@
 body {
   background-color: #121212;
   color: #eee;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .content {
@@ -8,8 +9,61 @@ body {
   background-size: contain;
   height: 800px;
   background-repeat: no-repeat;
+  padding: 600px 5% 200px 5%;
   
   h1 {
     margin: 0;
+  } 
+}
+.images3 {
+  img, video {
+    width: 33%;
+    min-width: 200px;
+  }
+}
+
+.images4 {
+  display: flex;
+  flex-wrap: wrap;
+
+  img, video {
+    margin: 2px;
+    width: calc(50% - 4px);
+    min-width: 200px;
+  }
+}
+
+.mleft {
+  margin-right: 15%;
+}
+
+.mright {
+  margin-left: 15%;
+}
+
+.text-right {
+  width: 50%;
+  margin-left: auto;
+}
+
+.parallax-image {
+  position: relative;
+
+  &__content {
+    background-color: #7E728CDD;
+    width: 35%;
+    min-width: 350px;
+    position: absolute;
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+
+  &__image {
+    width: 90%;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
   }
 }

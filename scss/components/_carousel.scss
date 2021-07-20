@@ -1,0 +1,12 @@
+.carousel {
+  overflow: hidden;
+  
+  &__line {
+    display: flex;
+    margin: 5px 0;
+  }
+
+  img {
+    width: 40%;
+  }
+}
