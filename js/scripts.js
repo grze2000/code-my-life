@@ -13,7 +13,7 @@ gsap.set('#dino', {
   rotation: -1
 });
 
-gsap.to('#dino', {
+const dino = gsap.to('#dino', {
   motionPath: {
     path: [
       {x: -160, y: -3, rotation: -1},
@@ -63,7 +63,7 @@ for (const [i, val] of cloudsValues.entries()) {
 }
 // clouds.progress(0.5);
 
-gsap.to('#light path', {opacity: '0.4', duration: 2, repeat: -1, yoyo: true, ease: 'none'});
+const light = gsap.to('.light path', {opacity: '0.4', duration: 2, repeat: -1, yoyo: true, ease: 'none'});
 
 // const sky = new TimelineLite({repeat: -1, ease: 'none'});
 // sky.to('#sky-bg', {fill: '#d6bfbf', duration: 5})
@@ -249,3 +249,18 @@ imagesLoaded('.carousel img', () => {
     });
   });
 });
+
+ScrollTrigger.create({
+  trigger: '.content',
+  start: 'top top',
+  onEnter: () => {
+    [dino, walking, smoke, clouds, light].forEach(anim => {
+      anim.pause();
+    });
+  },
+  onLeaveBack: () => {
+    [dino, walking, smoke, clouds, light].forEach(anim => {
+      anim.play();
+    });
+  }
+})
