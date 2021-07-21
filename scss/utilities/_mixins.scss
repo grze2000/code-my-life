@@ -1,0 +1,15 @@
+@mixin text50 {
+  @media #{$large} {
+    width: 50%;
+  }
+}
+
+@mixin mobile-text-left {
+  @media #{$medium} {
+    text-align: left;
+
+    &__heading {
+      text-align: center;
+    }
+  }
+}

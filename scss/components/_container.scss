@@ -1,18 +1,28 @@
 .container {
   display: flex;
   margin: 150px 0;
+  
+  @media #{$medium} {
+    flex-direction: column;
+  }
 
   &__text {
-    // flex-grow: 1;
     width: 50%;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
+
+    @media #{$medium} {
+      width: 100%;
+    }
     
     &--right-aligned {
       @extend .container__text;
-      text-align: justify;
+      @media #{$large} {
+        text-align: justify;
+      }
 
       .container__heading {
         text-align: center;
@@ -23,10 +33,18 @@
   &__heading {
     margin: 0;
     padding: 0;
+
+    @media #{$medium} {
+      text-align: center;
+    }
   }
 
   &__image-box {
     width: 50%;
+
+    @media #{$medium} {
+      width: 100%;
+    }
 
     video, img {
       width: 100%;
