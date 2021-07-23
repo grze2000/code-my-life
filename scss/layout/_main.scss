@@ -7,9 +7,8 @@ body {
 .content {
   background-image: url('../img/landscape-gradient.png');
   background-size: contain;
-  height: 800px;
   background-repeat: no-repeat;
-  padding: 600px 5% 200px 5%;
+  padding: 500px 5% 0 5%;
   
   h1 {
     margin: 0;
@@ -17,6 +16,10 @@ body {
 }
 .images3 {
   display: flex;
+  margin: 60px 0;
+  height: 350px;
+  align-items: center;
+  justify-content: center;
 
   @media #{$medium} {
     flex-direction: column;
@@ -37,7 +40,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-  padding: 100px 0;
+  margin: 100px 0;
+  height: 850px;
+  align-items: center;
+  align-content: center;
 
   @media #{$small} {
     flex-direction: column;
@@ -105,5 +111,37 @@ a {
 
   @media #{$medium} {
     margin-left: auto;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  p {
+    margin: 0.5em 0;
+  }
+
+  &--1 {
+    @extend .text;
+    height: 275px;
+  }
+  &--2 {
+    @extend .text;
+      height: 300px;
+  }
+  &--3 {
+    @extend .text;
+    height: 240px;
+  }
+  &--4 {
+    @extend .text;
+    height: 350px;
+  }
+  &--5 {
+    @extend .text;
+    height: 320px;
   }
 }

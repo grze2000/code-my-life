@@ -2,6 +2,7 @@ gsap.registerPlugin(MotionPathPlugin);
 gsap.registerPlugin(MorphSVGPlugin);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(DrawSVGPlugin);
 
 const svg = document.querySelector('#fairytale');
 const viewBox = svg.viewBox.baseVal;
@@ -231,7 +232,13 @@ function scalePrallax() {
   });
 }
 
-window.addEventListener('resize', scalePrallax);
+let lastDocumentWidth = document.querySelector('.timeline').viewBox.baseVal.width;
+
+window.addEventListener('resize', () => {
+  scalePrallax();
+  scaleTimeline();
+  lastDocumentWidth = document.body.clientWidth;
+});
 parallaxImage.addEventListener('load', scalePrallax);
 
 imagesLoaded('.carousel img', () => {
@@ -263,4 +270,81 @@ ScrollTrigger.create({
       anim.play();
     });
   }
-})
+});
+
+function scaleTimeline() {
+  const width = document.body.clientWidth;
+  const line = document.querySelector('#line2');
+  const lineSize = line.getBBox();
+  gsap.set(line, {
+    x: (width-lineSize.width)-lineSize.x,
+  });
+
+  const text = document.querySelector('#text2');
+  const textSize = text.getBBox();
+  gsap.set(text, {
+    x: width-textSize.width-10
+  });
+  
+  const path = document.querySelector('#path').getAttribute('d').replace(/[sScC]/g, match => '*'+match+',').replace(/\d-/g, match => match[0]+',-').split('*')
+  let newPath = path[0];
+
+  path.shift();
+  path.forEach(curve => {
+    let newCurve = []
+    curve.split(',').forEach((elem, i) => {
+      if(i % 2 == 1) {
+        newCurve.push(Math.round((parseFloat(elem) * document.body.clientWidth / lastDocumentWidth*100)/100).toString());
+      } else {
+        newCurve.push(elem);
+      }
+    });
+    newPath += newCurve[0]+newCurve.slice(1).join(',');
+  });
+
+  gsap.set('#path', {
+    attr: {
+      d: newPath
+    }
+  });
+}
+scaleTimeline();
+lastDocumentWidth = document.body.clientWidth;
+
+const timeline = gsap.timeline({
+  defaults: {
+    duration: 1
+  },
+  scrollTrigger: {
+    trigger: '.timeline',
+    scrub: true,
+    start: 'top center',
+    end: 'bottom center'
+  },
+});
+timeline.from('#path', {
+  drawSVG: 0,
+  ease: CustomEase.create("custom", "M0,0,C0,0,0.036,0.036,0.095,0.095,0.095,0.198,0.076,0.2,0.5,0.5,0.534,0.664,0.512,0.636,0.646,0.732,0.839,0.87,1,1,1,1"),
+}, 0);
+
+gsap.set('#lines line:not(#line2)', {
+  transformOrigin: 'center left',
+  scale: [0, 1]
+});
+
+gsap.set('#text text', {
+  scale: 0,
+  transformOrigin: 'top center'
+});
+
+gsap.set('#line2', {
+  transformOrigin: 'center right',
+  scale: [0, 1]
+});
+
+[0.01, 0.1, 0.57, 0.66, 0.9].forEach((delay, i) => {
+  timeline.to(`#line${i+1}, #text${i+1}`, {
+    scale: 1,
+    duration: 0.03
+  }, delay);
+});

@@ -1,0 +1,17 @@
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 255px;
+}
+
+#text text {
+  @media #{$large} and (max-width: 1050px) {
+    font-size: 28px;
+  }
+}
