@@ -122,8 +122,8 @@ pre {
   display: inline-block;
 }
 
-.mobile-hidden {
-  @media #{$small} {
+.ascii-hidden {
+  @media (max-width: 610px) {
     display: none;
   }
 }

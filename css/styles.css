@@ -380,8 +380,8 @@ pre {
   display: inline-block;
 }
 
-@media (max-width: 500px) {
-  .mobile-hidden {
+@media (max-width: 610px) {
+  .ascii-hidden {
     display: none;
   }
 }
