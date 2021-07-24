@@ -301,10 +301,9 @@ function scaleTimeline() {
   });
   
   ['#path', '#path2', '#path3'].forEach(elem => {
-    const path = document.querySelector(elem).getAttribute('d').replace(/[sScC]/g, match => '*'+match+',').replace(/\d-/g, match => match[0]+',-').split('*')
-    let newPath = path[0];
+    const path = document.querySelector(elem).getAttribute('d').replace('M', 'M,').replace(/[sScC]/g, match => '*'+match+',').replace(/\d-/g, match => match[0]+',-').split('*')
+    let newPath = '';
 
-    path.shift();
     path.forEach(curve => {
       let newCurve = []
       curve.split(',').forEach((elem, i) => {
