@@ -3,12 +3,9 @@
   align-items: center;
   height: 515px;
   
-  @media #{$small} {
-    height: initial;
-    margin: 20px 0;
-  }
-  
   @media #{$medium} {
+    height: initial;
+    margin: 25px 0;
     flex-direction: column;
   }
 
@@ -22,9 +19,6 @@
 
     @media #{$medium} {
       width: 100%;
-    }
-
-    @media #{$small} {
       order: 1;
       margin-bottom: 20px;
     }
@@ -55,9 +49,6 @@
 
     @media #{$medium} {
       width: 100%;
-    }
-
-    @media #{$small} {
       order: 2;
     }
 

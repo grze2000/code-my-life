@@ -5,11 +5,8 @@
   align-items: center;
   justify-content: center;
 
-  @media #{$small} {
-    height: initial;
-  }
-
   @media #{$medium} {
+    height: initial;
     flex-direction: column;
   }
 
@@ -33,7 +30,7 @@
   align-items: center;
   align-content: center;
 
-  @media #{$small} {
+  @media #{$medium} {
     flex-direction: column;
     height: initial;
   }
@@ -43,7 +40,7 @@
     width: calc(50% - 4px);
     min-width: 200px;
 
-    @media #{$small} {
+    @media #{$medium} {
       width: 100%;
     }
   }

@@ -437,6 +437,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   animateImageGallery();
   animateParallax();
   animateCarousel();
-  prepareLinesAndTexts();
-  animateTimeline();
+  if(document.body.clientWidth > 900) {
+    prepareLinesAndTexts();
+    animateTimeline();
+  }
 });

@@ -10,7 +10,7 @@ body {
   background-repeat: no-repeat;
   padding: 500px 5% 0 5%;
 
-  @media #{$small} {
+  @media #{$medium} {
     padding-top: 200px;
   }
   
@@ -83,7 +83,7 @@ a {
     margin: 0.5em 0;
   }
 
-  @media #{$small} {
+  @media #{$medium} {
     height: initial !important;
   }
 
@@ -113,7 +113,7 @@ a {
   line-height: 1.5em;
   font-size: 1.1em;
 
-  @media #{$small} {
+  @media #{$medium} {
     padding: 20px 0;
   }
 }
@@ -126,4 +126,26 @@ pre {
   @media (max-width: 610px) {
     display: none;
   }
+}
+
+.year {
+  position: relative;
+
+  &::before {
+    @media #{$medium} {
+      content: attr(data-year);
+      display: block;
+      color: #7E728C;
+      font-weight: bold;
+      font-size: 0.6em;
+      position: absolute;
+      top: -1.1em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.parallax-image .year::before {
+  color: #cca;
 }

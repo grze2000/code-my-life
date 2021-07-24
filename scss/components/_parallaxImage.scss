@@ -15,7 +15,7 @@
     padding: 10px 20px;
     box-sizing: border-box;
 
-    @media #{$not-small} {
+    @media #{$large} {
       width: 35%;
       min-width: 400px;
     }
@@ -28,7 +28,7 @@
     max-height: 900px;
     max-width: 95%;
 
-    @media #{$small} {
+    @media #{$medium} {
       max-width: 100%;
     }
   }

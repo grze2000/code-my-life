@@ -22,14 +22,10 @@ body, html {
   align-items: center;
   height: 515px;
 }
-@media (max-width: 500px) {
-  .container, .container--large {
-    height: initial;
-    margin: 20px 0;
-  }
-}
 @media (max-width: 900px) {
   .container, .container--large {
+    height: initial;
+    margin: 25px 0;
     flex-direction: column;
   }
 }
@@ -44,10 +40,6 @@ body, html {
 @media (max-width: 900px) {
   .container__text, .container__text--right-aligned {
     width: 100%;
-  }
-}
-@media (max-width: 500px) {
-  .container__text, .container__text--right-aligned {
     order: 1;
     margin-bottom: 20px;
   }
@@ -75,10 +67,6 @@ body, html {
 @media (max-width: 900px) {
   .container__image-box {
     width: 100%;
-  }
-}
-@media (max-width: 500px) {
-  .container__image-box {
     order: 2;
   }
 }
@@ -107,13 +95,9 @@ body, html {
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 500px) {
-  .images3 {
-    height: initial;
-  }
-}
 @media (max-width: 900px) {
   .images3 {
+    height: initial;
     flex-direction: column;
   }
 }
@@ -137,7 +121,7 @@ body, html {
   align-items: center;
   align-content: center;
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .images4 {
     flex-direction: column;
     height: initial;
@@ -148,7 +132,7 @@ body, html {
   width: calc(50% - 4px);
   min-width: 200px;
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .images4 img, .images4 video {
     width: 100%;
   }
@@ -170,7 +154,7 @@ body, html {
   padding: 10px 20px;
   box-sizing: border-box;
 }
-@media (min-width: 500px) {
+@media (min-width: 901px) {
   .parallax-image__content {
     width: 35%;
     min-width: 400px;
@@ -183,7 +167,7 @@ body, html {
   max-height: 900px;
   max-width: 95%;
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .parallax-image__image {
     max-width: 100%;
   }
@@ -243,7 +227,7 @@ body {
   background-repeat: no-repeat;
   padding: 500px 5% 0 5%;
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .content {
     padding-top: 200px;
   }
@@ -344,7 +328,7 @@ a:hover {
 .text p, .text--5 p, .text--4 p, .text--3 p, .text--2 p, .text--1 p {
   margin: 0.5em 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .text, .text--5, .text--4, .text--3, .text--2, .text--1 {
     height: initial !important;
   }
@@ -370,7 +354,7 @@ a:hover {
   line-height: 1.5em;
   font-size: 1.1em;
 }
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .epilogue {
     padding: 20px 0;
   }
@@ -384,6 +368,27 @@ pre {
   .ascii-hidden {
     display: none;
   }
+}
+
+.year {
+  position: relative;
+}
+@media (max-width: 900px) {
+  .year::before {
+    content: attr(data-year);
+    display: block;
+    color: #7E728C;
+    font-weight: bold;
+    font-size: 0.6em;
+    position: absolute;
+    top: -1.1em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.parallax-image .year::before {
+  color: #cca;
 }
 
 .terminal {
