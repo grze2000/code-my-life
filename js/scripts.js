@@ -8,6 +8,9 @@ const svg = document.querySelector('#fairytale');
 const viewBox = svg.viewBox.baseVal;
 const aspectRatio = document.body.clientWidth/document.body.clientHeight;
 
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 gsap.set('#dino', {
   x: -500,
   y: 20,
