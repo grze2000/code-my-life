@@ -230,6 +230,15 @@ function scalePrallax() {
     'padding-top': parallaxImage.height/2-parallaxContent.offsetHeight/2,
     'min-height': parallaxImage.height*1.5
   });
+
+  const t2Start = document.querySelector('#timeline2-start');
+  const t3Start = document.querySelector('#timeline3-start');
+  gsap.set('#timeline2', {
+    top: t2Start.offsetTop-150
+  });
+  gsap.set('#timeline3', {
+    top: t3Start.offsetTop-200
+  });
 }
 
 let lastDocumentWidth = document.querySelector('.timeline').viewBox.baseVal.width;
@@ -274,70 +283,93 @@ ScrollTrigger.create({
 
 function scaleTimeline() {
   const width = document.body.clientWidth;
-  const line = document.querySelector('#line2');
-  const lineSize = line.getBBox();
-  gsap.set(line, {
-    x: (width-lineSize.width)-lineSize.x,
+
+  ['#line2', '#line7', '#line8', '#line9'].forEach(elem => {  
+    const line = document.querySelector(elem);
+    const lineSize = line.getBBox();
+    gsap.set(line, {
+      x: (width-lineSize.width)-lineSize.x,
+    });
   });
 
-  const text = document.querySelector('#text2');
-  const textSize = text.getBBox();
-  gsap.set(text, {
-    x: width-textSize.width-10
+  ['#text2', '#text7', '#text8', '#text9'].forEach(elem => {
+    const text = document.querySelector(elem);
+    const textSize = text.getBBox();
+    gsap.set(text, {
+      x: width-textSize.width-10
+    });
   });
   
-  const path = document.querySelector('#path').getAttribute('d').replace(/[sScC]/g, match => '*'+match+',').replace(/\d-/g, match => match[0]+',-').split('*')
-  let newPath = path[0];
+  ['#path', '#path2', '#path3'].forEach(elem => {
+    const path = document.querySelector(elem).getAttribute('d').replace(/[sScC]/g, match => '*'+match+',').replace(/\d-/g, match => match[0]+',-').split('*')
+    let newPath = path[0];
 
-  path.shift();
-  path.forEach(curve => {
-    let newCurve = []
-    curve.split(',').forEach((elem, i) => {
-      if(i % 2 == 1) {
-        newCurve.push(Math.round((parseFloat(elem) * document.body.clientWidth / lastDocumentWidth*100)/100).toString());
-      } else {
-        newCurve.push(elem);
+    path.shift();
+    path.forEach(curve => {
+      let newCurve = []
+      curve.split(',').forEach((elem, i) => {
+        if(i % 2 == 1) {
+          newCurve.push(Math.round((parseFloat(elem) * document.body.clientWidth / lastDocumentWidth*100)/100).toString());
+        } else {
+          newCurve.push(elem);
+        }
+      });
+      newPath += newCurve[0]+newCurve.slice(1).join(',');
+    });
+
+    gsap.set(elem, {
+      attr: {
+        d: newPath
       }
     });
-    newPath += newCurve[0]+newCurve.slice(1).join(',');
-  });
-
-  gsap.set('#path', {
-    attr: {
-      d: newPath
-    }
   });
 }
 scaleTimeline();
 lastDocumentWidth = document.body.clientWidth;
 
-const timeline = gsap.timeline({
-  defaults: {
-    duration: 1
-  },
-  scrollTrigger: {
-    trigger: '.timeline',
-    scrub: true,
-    start: 'top center',
-    end: 'bottom center'
-  },
-});
+function createTimeline(elem) {
+  return gsap.timeline({
+    defaults: {
+      duration: 1
+    },
+    scrollTrigger: {
+      trigger: elem,
+      scrub: true,
+      start: 'top center',
+      end: 'bottom center'
+    },
+  });
+}
+const timeline = createTimeline('#timeline1');
+const timeline2 = createTimeline('#timeline2');
+const timeline3 = createTimeline('#timeline3');
+
 timeline.from('#path', {
   drawSVG: 0,
   ease: CustomEase.create("custom", "M0,0,C0,0,0.036,0.036,0.095,0.095,0.095,0.198,0.076,0.2,0.5,0.5,0.534,0.664,0.512,0.636,0.646,0.732,0.839,0.87,1,1,1,1"),
 }, 0);
 
-gsap.set('#lines line:not(#line2)', {
+timeline2.from('#path2', {
+  drawSVG: 0,
+  ease: 'power1.inOut'
+}, 0);
+
+timeline3.from('#path3', {
+  drawSVG: 0,
+  ease: 'none'
+}, 0);
+
+gsap.set('#line1, #line3, #line4, #line5, #line6', {
   transformOrigin: 'center left',
   scale: [0, 1]
 });
 
-gsap.set('#text text', {
+gsap.set('.timeline text', {
   scale: 0,
   transformOrigin: 'top center'
 });
 
-gsap.set('#line2', {
+gsap.set('#line2, #line7, #line8, #line9', {
   transformOrigin: 'center right',
   scale: [0, 1]
 });
@@ -348,3 +380,15 @@ gsap.set('#line2', {
     duration: 0.03
   }, delay);
 });
+
+[0.01, 0.5, 0.65].forEach((delay, i) => {
+  timeline2.to(`#line${i+6}, #text${i+6}`, {
+    scale: 1,
+    duration: 0.3
+  }, delay);
+});
+
+timeline3.to('#line9, #text9', {
+  scale: 1,
+  duration: 0.6
+}, 0);

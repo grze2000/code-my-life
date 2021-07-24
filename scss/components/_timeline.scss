@@ -5,13 +5,23 @@ main {
 
 .timeline {
   position: absolute;
-  top: 0;
   left: 0;
-  margin-top: 255px;
+
+  @media #{$medium} {
+    display: none;
+  }
+
+  text {
+    @media #{$large} and (max-width: 1050px) {
+      font-size: 28px;
+    }
+  }
 }
 
-#text text {
-  @media #{$large} and (max-width: 1050px) {
-    font-size: 28px;
-  }
+#timeline1 {
+  top: 255px;
+}
+
+#timeline2 {
+  top: 8260px;
 }

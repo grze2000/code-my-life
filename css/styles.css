@@ -116,15 +116,25 @@ main {
 
 .timeline {
   position: absolute;
-  top: 0;
   left: 0;
-  margin-top: 255px;
 }
-
+@media (max-width: 900px) {
+  .timeline {
+    display: none;
+  }
+}
 @media (min-width: 901px) and (max-width: 1050px) {
-  #text text {
+  .timeline text {
     font-size: 28px;
   }
+}
+
+#timeline1 {
+  top: 255px;
+}
+
+#timeline2 {
+  top: 8260px;
 }
 
 .header {
@@ -395,6 +405,12 @@ a:hover {
 }
 .text--5 {
   height: 320px;
+}
+
+.epilogue {
+  padding: 100px 0;
+  line-height: 1.5em;
+  font-size: 1.1em;
 }
 
 footer {
