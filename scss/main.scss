@@ -1,11 +1,12 @@
 @import 'utilities/variables';
 @import 'utilities/mixins';
 @import 'base/reset';
-@import 'components/container';
 @import 'components/carousel';
+@import 'components/container';
+@import 'components/gallery';
 @import 'components/parallaxImage';
 @import 'components/timeline';
 @import 'layout/header';
-@import 'layout/terminal';
 @import 'layout/main';
+@import 'layout/terminal';
 @import 'layout/footer';

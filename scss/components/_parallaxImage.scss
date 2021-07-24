@@ -11,11 +11,14 @@
   }
 
   &__content {
-    width: 35%;
-    min-width: 400px;
     background-color: #7E728CDD;
     padding: 10px 20px;
     box-sizing: border-box;
+
+    @media #{$not-small} {
+      width: 35%;
+      min-width: 400px;
+    }
   }
 
   &__image {
@@ -24,5 +27,9 @@
     right: 0;
     max-height: 900px;
     max-width: 95%;
+
+    @media #{$small} {
+      max-width: 100%;
+    }
   }
 }
