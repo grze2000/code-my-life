@@ -258,19 +258,17 @@ function scalePrallax() {
 }
 
 function animateCarousel() {
-  imagesLoaded('.carousel img', () => {
-    gsap.utils.toArray('.carousel__line').forEach(line => {
-      gsap.fromTo(line, {
-        x: line.classList.contains('carousel-left') ? -line.scrollWidth : '100%'
-      }, {
-        x: line.classList.contains('carousel-left') ? 0 : (line.scrollWidth-line.offsetWidth)*-1,
-        scrollTrigger: {
-          trigger: '.carousel',
-          scrub: 0.5,
-          start: 'top bottom',
-          end: 'top top'
-        }
-      });
+  gsap.utils.toArray('.carousel__line').forEach(line => {
+    gsap.fromTo(line, {
+      x: line.classList.contains('carousel-left') ? -line.scrollWidth : '100%'
+    }, {
+      x: line.classList.contains('carousel-left') ? 0 : (line.scrollWidth-line.offsetWidth)*-1,
+      scrollTrigger: {
+        trigger: '.carousel',
+        scrub: 0.5,
+        start: 'top bottom',
+        end: 'top top'
+      }
     });
   });
 }
@@ -413,32 +411,46 @@ function setEventListeners() {
     scaleTimeline();
     lastDocumentWidth = document.body.clientWidth;
   });
-  parallaxImage.addEventListener('load', scalePrallax);
 
+  scalePrallax();
   scaleTimeline();
+  correctVh();
   lastDocumentWidth = document.body.clientWidth;
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  setEventListeners();
-  correctVh();
-
-  animateDino();
-  animateLights();
-  animateCluds();
-  animateSmoke();
-  animateTerminal();
-
-  autoScrollTerminal();
-  pauseOffScreen();
-
-  animateElementReveal();
-  animateSkew();
-  animateImageGallery();
-  animateParallax();
-  animateCarousel();
-  if(document.body.clientWidth > 900) {
-    prepareLinesAndTexts();
-    animateTimeline();
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
   }
+
+  imagesLoaded('img, video, .content', {background: true}, () => {
+    animateDino();
+    animateLights();
+    animateCluds();
+    animateSmoke();
+
+    gsap.to('.loader', {
+      autoAlpha: 0,
+      duration: 2,
+      ease: 'power3.in',
+      onComplete: () => {
+        document.body.classList.remove('loading');
+
+        setEventListeners();
+        autoScrollTerminal();
+        pauseOffScreen();
+
+        animateTerminal();
+        animateElementReveal();
+        animateSkew();
+        animateImageGallery();
+        animateParallax();
+        animateCarousel();
+        if(document.body.clientWidth > 900) {
+          prepareLinesAndTexts();
+          animateTimeline();
+        }
+      }
+    });
+  });
 });

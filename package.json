@@ -1,0 +1,24 @@
+{
+  "name": "code-my-life",
+  "version": "1.0.0",
+  "description": "Code my life is a project inspired by the popular Draw my life initiative, where people tell the story of their life using drawing or computer animation.\r I decided to use programming instead and tell a little more about my adventure with computer science.\r [Check it out](https://codemylife.grzegorzbabiarz.com/) to find out more about me!",
+  "main": "index.html",
+  "scripts": {
+    "watch-sass": "sass --watch scss/main.scss css/styles.css",
+    "build-sass": "sass scss/main.scss css/styles.css",
+    "autoprefixer": "npx postcss css/styles.css -o css/styles.css -u autoprefixer",
+    "minify-css": "cleancss css/styles.css -o css/styles.css --level 2",
+    "minify-js": "uglifyjs --compress --mangle -o js/scripts.js js/scripts.min.js",
+    "build": "npm run build-sass && npm run autoprefixer && npm run minify-css & npm run minify-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grze2000/code-my-life.git"
+  },
+  "author": "Grzegorz Babiarz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grze2000/code-my-life/issues"
+  },
+  "homepage": "https://github.com/grze2000/code-my-life#readme"
+}
