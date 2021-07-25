@@ -276,7 +276,7 @@ function animateCarousel() {
 function pauseOffScreen() {
   ScrollTrigger.create({
     trigger: '.content',
-    start: 'top top',
+    start: 'center top',
     onEnter: () => {
       [dino, walking, smoke, clouds, light].forEach(anim => {
         anim.pause();
