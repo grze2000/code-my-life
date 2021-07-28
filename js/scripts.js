@@ -291,7 +291,7 @@ function pauseOffScreen() {
 }
 
 function scaleTimeline() {
-  const width = document.body.clientWidth;
+  const width = document.querySelector('.content').clientWidth;
 
   ['#line2', '#line7', '#line8', '#line9'].forEach(elem => {  
     const line = document.querySelector(elem);
@@ -317,7 +317,7 @@ function scaleTimeline() {
       let newCurve = []
       curve.split(',').forEach((elem, i) => {
         if(i % 2 == 1) {
-          newCurve.push(Math.round((parseFloat(elem) * document.body.clientWidth / lastDocumentWidth*100)/100).toString());
+          newCurve.push(Math.round((parseFloat(elem) * width / lastDocumentWidth*100)/100).toString());
         } else {
           newCurve.push(elem);
         }

@@ -4,19 +4,22 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-.content {
+main {
   background-image: url('../img/landscape-gradient.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.content {
   padding: 500px 5% 0 5%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
 
   @media #{$medium} {
     padding-top: 200px;
   }
-  
-  h1 {
-    margin: 0;
-  } 
 }
 
 .text-right {
